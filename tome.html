@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Соціологічний журнал — Усі томи</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .tomes-grid {
+            display: flex;
+            gap: 48px;
+            justify-content: center;
+            margin: 80px 0;
+            flex-wrap: wrap;
+        }
+        .tome-card {
+            flex: 0 1 380px;
+            padding: 40px 32px;
+            text-decoration: none;
+            position: relative;
+            transition: all 0.2s ease;
+            border: 1px solid var(--rule-color);
+            background: var(--bg-tissue);
+        }
+        .tome-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-copper);
+        }
+        .tome-card-tag {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.55rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--accent-copper);
+            margin-bottom: 16px;
+        }
+        .tome-card-number {
+            font-family: 'Lora', serif;
+            font-size: 5rem;
+            font-weight: 600;
+            color: var(--accent-copper);
+            line-height: 1;
+            margin-bottom: 8px;
+            opacity: 0.85;
+        }
+        .tome-card-title {
+            font-family: 'Lora', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-bone);
+            margin-bottom: 12px;
+            line-height: 1.25;
+        }
+        .tome-card-desc {
+            font-family: 'Crimson Text', serif;
+            font-size: 1rem;
+            color: var(--text-bone-dim);
+            font-style: italic;
+            line-height: 1.5;
+        }
+        .tome-card-external {
+            border-style: dashed;
+            border-color: var(--accent-synaptic-blue);
+            background: var(--bg-indigo-night);
+        }
+        .tome-card-external:hover {
+            border-color: var(--accent-copper);
+        }
+        .tome-card-external .tome-card-tag {
+            color: var(--accent-synaptic-blue);
+        }
+        .tome-external-note {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.5rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent-synaptic-blue);
+            margin-top: 16px;
+            padding-top: 12px;
+            border-top: 1px solid var(--rule-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <header class="journal-header">
+            <div class="journal-masthead">
+                <span>Соціологічний журнал</span>
+                <span>2026</span>
+            </div>
+            <div class="chapter-number" style="font-size: 3rem;">Томи</div>
+            <h1 class="article-title">оберіть том</h1>
+            <div class="article-subtitle">Багатотомне соціологічне дослідження впливу цифрових технологій на підлітків</div>
+            <div class="article-meta">
+                <span>Кам'янський еколого-економічний ліцей</span>
+                <span>Соціологія</span>
+                <span>2026</span>
+            </div>
+        </header>
+
+        <div class="tomes-grid">
+            <!-- Том I — on this site -->
+            <a href="index.html" class="tome-card">
+                <div class="tome-card-tag">Соціологічний журнал · 2026</div>
+                <div class="tome-card-number">I</div>
+                <div class="tome-card-title">Вплив соціальних мереж на підлітків</div>
+                <div class="tome-card-desc">
+                    Комплексний аналіз: від нейрофізіологічних детермінант до інституційних перспектив подолання кризи. Кібербулінг, цифровий селфхарм, алгоритмічна віктимізація.
+                </div>
+                <div style="font-family: 'Space Mono', monospace; font-size: 0.5rem; letter-spacing: 0.15em; color: var(--accent-synaptic-blue); margin-top: 20px; text-transform: uppercase;">
+                    9 розділів
+                </div>
+            </a>
+
+            <!-- Том II — on external site -->
+            <a href="https://jjjjkek018-create.github.io/ai-effects/index.html" class="tome-card tome-card-external">
+                <div class="tome-card-tag">Глибока архітектура · 2026</div>
+                <div class="tome-card-number" style="color: var(--accent-synaptic-blue);">II</div>
+                <div class="tome-card-title">ШІ, увага та наступна хвиля</div>
+                <div class="tome-card-desc">
+                    Від великих мовних моделей як агентів соціалізації до нейроінтерфейсів: картографування глибокої архітектури алгоритмічного впливу на підлітків.
+                </div>
+                <div style="font-family: 'Space Mono', monospace; font-size: 0.5rem; letter-spacing: 0.15em; color: var(--accent-synaptic-blue); margin-top: 20px; text-transform: uppercase;">
+                    10 розділів
+                </div>
+                <div class="tome-external-note">
+                    → зовнішній сайт: jjjjkek018-create.github.io/ai-effects
+                </div>
+            </a>
+        </div>
+
+        <!-- Add links back to chapters on this site -->
+        <div style="margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--rule-color);">
+            <h2 style="font-family: 'Lora', serif; font-size: 1.2rem; font-weight: 600; color: var(--text-bone); margin-bottom: 24px;">
+                Зміст цього тому
+            </h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px 32px;">
+                <a href="index.html" style="font-family: 'Crimson Text', serif; color: var(--text-bone-dim); text-decoration: none; font-style: italic;">I. Вступ: трансформація інститутів соціалізації</a>
+                <a href="neurophysics.html" style="font-family: 'Crimson Text', serif; color: var(--text-bone-dim); text-decoration: none; font-style: italic;">II. Нейрофізіологічні детермінанти</a>
+                <a href="attention.html" style="font-family: 'Crimson Text', serif; color: var(--text-bone-dim); text-decoration: none; font-style: italic;">III. Когнітивні процеси: фрагментація уваги</a>
+                <a href="cyberbullying.html" style="font-family: 'Crimson Text', serif; color: var(--text-bone-dim); text-decoration: none; font-style: italic;">IV. Кібербулінг</a>
+                <a href="identity_crisis.html" style="font-family: 'Crimson Text', serif; color: var(--text-bone-dim); text-decoration: none; font-style: italic;">V. Криза ідентичності та селфхарм</a>
+                <a href="consequences.html" style="font-family: 'Crimson Text', serif; color: var(--text-bone-dim); text-decoration: none; font-style: italic;">VI–VII. Крайні наслідки</a>
+                <a href="ukr_socialisation.html" style="font-family: 'Crimson Text', serif; color: var(--text-bone-dim); text-decoration: none; font-style: italic;">VIII. Українські підлітки</a>
+                <a href="conclusions.html" style="font-family: 'Crimson Text', serif; color: var(--text-bone-dim); text-decoration: none; font-style: italic;">IX. Висновки</a>
+            </div>
+        </div>
+
+        <footer class="journal-footer">
+            <span>Кам'янка · 2026</span>
+            <span>Соціологічний журнал · Том I</span>
+        </footer>
+    </div>
+</body>
+</html>
