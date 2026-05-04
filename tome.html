@@ -6,163 +6,68 @@
     <title>Соціологічний журнал — Усі томи</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .tomes-grid {
-            display: flex;
-            gap: 48px;
-            justify-content: center;
-            margin: 80px 0;
-            flex-wrap: wrap;
-        }
-        .tome-card {
-            flex: 0 1 340px;
-            padding: 40px 32px;
-            text-decoration: none;
-            position: relative;
-            transition: all 0.2s ease;
-            border: 1px solid var(--rule-color);
-            background: var(--bg-tissue);
-        }
-        .tome-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent-copper);
-        }
-        .tome-card-tag {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.55rem;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            color: var(--accent-copper);
-            margin-bottom: 16px;
-        }
-        .tome-card-number {
-            font-family: 'Lora', serif;
-            font-size: 5rem;
-            font-weight: 600;
-            color: var(--accent-copper);
-            line-height: 1;
-            margin-bottom: 8px;
-            opacity: 0.85;
-        }
-        .tome-card-title {
-            font-family: 'Lora', serif;
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--text-bone);
-            margin-bottom: 12px;
-            line-height: 1.25;
-        }
-        .tome-card-desc {
-            font-family: 'Crimson Text', serif;
-            font-size: 1rem;
-            color: var(--text-bone-dim);
-            font-style: italic;
-            line-height: 1.5;
-        }
-        .tome-card-external {
-            border-style: dashed;
-            border-color: var(--accent-synaptic-blue);
-            background: var(--bg-indigo-night);
-        }
-        .tome-card-external:hover {
-            border-color: var(--accent-copper);
-        }
-        .tome-card-external .tome-card-tag {
-            color: var(--accent-synaptic-blue);
-        }
-        .tome-external-note {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.5rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--accent-synaptic-blue);
-            margin-top: 16px;
-            padding-top: 12px;
-            border-top: 1px solid var(--rule-color);
-        }
+        .tomes-grid { display: flex; flex-direction: column; gap: 24px; margin: 64px 0; }
+        .tome-link { display: flex; align-items: center; gap: 24px; text-decoration: none; color: inherit; padding: 24px 28px; border: 1px solid var(--rule-color); background: var(--bg-tissue); transition: all 0.2s ease; }
+        .tome-link:hover { border-color: var(--accent-copper); transform: translateY(-2px); }
+        .tome-link.current { border-color: var(--accent-copper); border-width: 2px; }
+        .tome-num { font-family: 'Lora', serif; font-size: 2.6rem; font-weight: 600; color: var(--accent-copper); min-width: 50px; text-align: center; flex-shrink: 0; }
+        .tome-info { flex: 1; }
+        .tome-tag { font-family: 'Space Mono', monospace; font-size: 0.5rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-synaptic-blue); margin-bottom: 4px; }
+        .tome-title { font-family: 'Lora', serif; font-size: 1rem; font-weight: 600; color: var(--text-bone); margin-bottom: 4px; }
+        .tome-desc { font-family: 'Crimson Text', serif; font-size: 0.85rem; font-style: italic; color: var(--text-bone-dim); }
+        .tome-arrow { font-family: 'Space Mono', monospace; font-size: 1.1rem; color: var(--rule-color); flex-shrink: 0; }
+        .tome-link:hover .tome-arrow { color: var(--accent-copper); }
+        .hub-back { text-align: center; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--rule-color); }
+        .hub-back a { font-family: 'Space Mono', monospace; font-size: 0.5rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-synaptic-blue); text-decoration: none; }
+        .hub-back a:hover { color: var(--accent-copper); }
     </style>
 </head>
 <body>
     <div class="main-container">
         <header class="journal-header">
-            <div class="journal-masthead">
-                <span>Соціологічний журнал</span>
-                <span>2026</span>
-            </div>
+            <div class="journal-masthead"><span>Соціологічний журнал</span><span>2026</span></div>
             <div class="chapter-number" style="font-size: 3rem;">Томи</div>
             <h1 class="article-title">оберіть том</h1>
             <div class="article-subtitle">Багатотомне соціологічне дослідження впливу цифрових технологій на підлітків</div>
-            <div class="article-meta">
-                <span>Кам'янський еколого-економічний ліцей</span>
-                <span>Соціологія</span>
-                <span>2026</span>
-            </div>
+            <div class="article-meta"><span>Кам'янський еколого-економічний ліцей</span><span>Соціологія</span><span>2026</span></div>
         </header>
-
         <div class="tomes-grid">
-            <!-- Том I — on this site -->
-            <a href="index.html" class="tome-card">
-                <div class="tome-card-tag">Соціологічний журнал · 2026</div>
-                <div class="tome-card-number">I</div>
-                <div class="tome-card-title">Вплив соціальних мереж на підлітків</div>
-                <div class="tome-card-desc">
-                    Комплексний аналіз: від нейрофізіологічних детермінант до інституційних перспектив подолання кризи.
-                </div>
-                <div style="font-family: 'Space Mono', monospace; font-size: 0.5rem; letter-spacing: 0.15em; color: var(--accent-synaptic-blue); margin-top: 20px; text-transform: uppercase;">9 розділів</div>
+            <a href="https://jjjjkek018-create.github.io/report/index.html" class="tome-link">
+                <div class="tome-num" style="font-size: 1rem; background: var(--bg-tissue); padding: 8px 14px; min-width: auto;">звіт</div>
+                <div class="tome-info"><div class="tome-tag">Підлітковий дослідницький проєкт</div><div class="tome-title">Звіт щодо впливу соціальних мереж на українських підлітків</div><div class="tome-desc">Соціокультурний, психологічний та лінгвістичний виміри.</div></div>
+                <span class="tome-arrow">→</span>
             </a>
-
-            <!-- Том II — external -->
-            <a href="https://jjjjkek018-create.github.io/ai-effects/index.html" class="tome-card tome-card-external">
-                <div class="tome-card-tag">Глибока архітектура · 2026</div>
-                <div class="tome-card-number" style="color: var(--accent-synaptic-blue);">II</div>
-                <div class="tome-card-title">ШІ, увага та наступна хвиля</div>
-                <div class="tome-card-desc">
-                    Від LLM-агентів соціалізації до нейроінтерфейсів: картографування глибокої архітектури алгоритмічного впливу.
-                </div>
-                <div style="font-family: 'Space Mono', monospace; font-size: 0.5rem; letter-spacing: 0.15em; color: var(--accent-synaptic-blue); margin-top: 20px; text-transform: uppercase;">10 розділів</div>
-                <div class="tome-external-note">→ зовнішній сайт</div>
+            <a href="index.html" class="tome-link current">
+                <div class="tome-num">I</div>
+                <div class="tome-info"><div class="tome-tag">Поточний том</div><div class="tome-title">Вплив соціальних мереж на підлітків</div><div class="tome-desc">Нейрофізіологія, кібербулінг, селфхарм, прецедент Моллі Рассел.</div></div>
+                <span class="tome-arrow">—</span>
             </a>
-
-            <!-- Том III — external -->
-            <a href="https://jjjjkek018-create.github.io/resistance-reconstruction/index.html" class="tome-card tome-card-external">
-                <div class="tome-card-tag">Спротив, регулювання та реконструкція · 2026</div>
-                <div class="tome-card-number" style="color: var(--accent-synaptic-blue);">III</div>
-                <div class="tome-card-title">Спротив, регулювання та реконструкція</div>
-                <div class="tome-card-desc">
-                    Від меж індивідуальної відповідальності до реконструкції соціального договору з технологіями.
-                </div>
-                <div style="font-family: 'Space Mono', monospace; font-size: 0.5rem; letter-spacing: 0.15em; color: var(--accent-synaptic-blue); margin-top: 20px; text-transform: uppercase;">5 розділів</div>
-                <div class="tome-external-note">→ зовнішній сайт</div>
+            <a href="https://jjjjkek018-create.github.io/ai-effects/index.html" class="tome-link">
+                <div class="tome-num">II</div>
+                <div class="tome-info"><div class="tome-tag">Глибока архітектура</div><div class="tome-title">ШІ, увага та наступна хвиля</div><div class="tome-desc">LLM-агенти, синтетичні медіа, нейроінтерфейси.</div></div>
+                <span class="tome-arrow">→</span>
             </a>
-
-            <!-- Том IV — external -->
-            <a href="https://jjjjkek018-create.github.io/case-studies/index.html" class="tome-card tome-card-external">
-                <div class="tome-card-tag">Тематичні дослідження · 2026</div>
-                <div class="tome-card-number" style="color: var(--accent-synaptic-blue);">IV</div>
-                <div class="tome-card-title">Тематичні дослідження цифрової трансформації</div>
-                <div class="tome-card-desc">
-                    Мікроаналіз прецедентів, юрисдикцій та соціальних рухів: від справи Моллі Рассел до цифрового договору України.
-                </div>
-                <div style="font-family: 'Space Mono', monospace; font-size: 0.5rem; letter-spacing: 0.15em; color: var(--accent-synaptic-blue); margin-top: 20px; text-transform: uppercase;">10 розділів</div>
-                <div class="tome-external-note">→ зовнішній сайт</div>
+            <a href="https://jjjjkek018-create.github.io/resistance-reconstruction/index.html" class="tome-link">
+                <div class="tome-num">III</div>
+                <div class="tome-info"><div class="tome-tag">Спротив, регулювання та реконструкція</div><div class="tome-title">Спротив, регулювання та реконструкція</div><div class="tome-desc">Правові архітектури, низові рухи, альтернативні інфраструктури.</div></div>
+                <span class="tome-arrow">→</span>
             </a>
-
-            <!-- Том V — external -->
-            <a href="https://jjjjkek018-create.github.io/anthropological-question/index.html" class="tome-card tome-card-external">
-                <div class="tome-card-tag">Антропологічне питання · 2026</div>
-                <div class="tome-card-number" style="color: var(--accent-synaptic-blue);">V</div>
-                <div class="tome-card-title">Антропологічне питання</div>
-                <div class="tome-card-desc">
-                    Філософська антропологія алгоритмічної епохи: підліток як біоіндикатор, онтологія цифрового суб'єкта, горизонт агентності.
-                </div>
-                <div style="font-family: 'Space Mono', monospace; font-size: 0.5rem; letter-spacing: 0.15em; color: var(--accent-synaptic-blue); margin-top: 20px; text-transform: uppercase;">5 розділів</div>
-                <div class="tome-external-note">→ зовнішній сайт</div>
+            <a href="https://jjjjkek018-create.github.io/case-studies/index.html" class="tome-link">
+                <div class="tome-num">IV</div>
+                <div class="tome-info"><div class="tome-tag">Тематичні дослідження</div><div class="tome-title">Тематичні дослідження цифрової трансформації</div><div class="tome-desc">Mastodon, австралійська заборона, батьківські рухи.</div></div>
+                <span class="tome-arrow">→</span>
+            </a>
+            <a href="https://jjjjkek018-create.github.io/anthropological-question/index.html" class="tome-link">
+                <div class="tome-num">V</div>
+                <div class="tome-info"><div class="tome-tag">Антропологічне питання</div><div class="tome-title">Антропологічне питання</div><div class="tome-desc">Філософська антропологія алгоритмічної епохи.</div></div>
+                <span class="tome-arrow">→</span>
             </a>
         </div>
-
-        <div style="margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--rule-color);">
-            <h2 style="font-family: 'Lora', serif; font-size: 1.2rem; font-weight: 600; color: var(--text-bone); margin-bottom: 24px;">Зміст цього тому</h2>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px 32px;">
-                <a href="index.html" style="font-family: 'Crimson Text', serif; color: var(--text-bone-dim); text-decoration: none; font-style: italic;">I. Вступ: трансформація інститутів соціалізації</a>
+        <div class="hub-back"><a href="https://jjjjkek018-create.github.io">← головна сторінка проєкту</a></div>
+        <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--rule-color);">
+            <h2 style="font-family: 'Lora', serif; font-size: 1.1rem; font-weight: 600; color: var(--text-bone); margin-bottom: 20px;">Зміст цього тому</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px 28px;">
+                <a href="index.html" style="font-family: 'Crimson Text', serif; color: var(--text-bone-dim); text-decoration: none; font-style: italic;">I. Вступ</a>
                 <a href="neurophysics.html" style="font-family: 'Crimson Text', serif; color: var(--text-bone-dim); text-decoration: none; font-style: italic;">II. Нейрофізіологічні детермінанти</a>
                 <a href="attention.html" style="font-family: 'Crimson Text', serif; color: var(--text-bone-dim); text-decoration: none; font-style: italic;">III. Когнітивні процеси</a>
                 <a href="cyberbullying.html" style="font-family: 'Crimson Text', serif; color: var(--text-bone-dim); text-decoration: none; font-style: italic;">IV. Кібербулінг</a>
@@ -172,11 +77,7 @@
                 <a href="conclusions.html" style="font-family: 'Crimson Text', serif; color: var(--text-bone-dim); text-decoration: none; font-style: italic;">IX. Висновки</a>
             </div>
         </div>
-
-        <footer class="journal-footer">
-            <span>Кам'янка · 2026</span>
-            <span>Соціологічний журнал · Том I</span>
-        </footer>
+        <footer class="journal-footer"><span>Кам'янка · 2026</span><span>Соціологічний журнал · Том I</span></footer>
     </div>
 </body>
 </html>
